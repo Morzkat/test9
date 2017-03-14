@@ -11,18 +11,13 @@ class home extends controllers
 
   }
 
-  public function p($name)
-  {
-
-  }
-
+  //twig values
   public function index($name = '')
   {
 
-      $user = $this->model("User");
-      $user->name = $name;
+      $user = $this->model("userModel");
 
-      $this->view("home/index",['name' => $user->name]);
+      $this->view("home/index",['name' => $_SESSION]);
   }
 }
 

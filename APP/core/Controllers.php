@@ -1,6 +1,6 @@
 <?php
 
-
+ini_set('memory_limit', '-1');
 /**
  *
  */
@@ -18,9 +18,11 @@ class controllers
     return new $model();
   }
 
+  //pass values to twig on $data
   protected function view($view, $data = [])
   {
     require_once '../APP/views/'.$view.'.php';
+    print_r ($data);
   }
 }
 
