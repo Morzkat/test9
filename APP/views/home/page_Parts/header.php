@@ -8,7 +8,7 @@
 
      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-
+     <link rel="stylesheet" href="../public/css/comments.css">
      <!--[if lt IE 9]>
        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
@@ -32,45 +32,36 @@
              <!-- Collect the nav links, forms, and other content for toggling -->
              <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                  <ul class="nav navbar-nav">
-                   <?php
 
-                     if (!isset($_SESSION['user_id']))
-                     {
-                       echo ' <ul class="nav navbar-nav navbar-right">
+                   <?php if (!isset($_SESSION['user_id'])):?>
 
-                            <li data-toggle="modal" data-target="#sign_In" class="mbr-navbar_item">
-                              <a class="mbr-buttons_link">Registrarse??</a>
-                            </li>
-                            <li data-toggle="modal" data-target="#log_In" class="mbr-navbar_item">
-                              <a class="mbr-buttons_link">Iniciar Sesion</a>
-                            </li>
-                            <li>
-                              <a href="home/aboutUs" class="mbr-buttons_link">Sobre??</a>
-                            </li>
+                  <ul class="nav navbar-nav navbar-right">
+                    <li data-toggle="modal" data-target="#sign_In" class="mbr-navbar_item">
+                      <a class="mbr-buttons_link">Registrarse??</a>
+                    </li>
+                    <li data-toggle="modal" data-target="#log_In" class="mbr-navbar_item">
+                      <a class="mbr-buttons_link">Iniciar Sesion</a>
+                    </li>
+                    <li>
+                      <a href="home/aboutUs" class="mbr-buttons_link">Sobre??</a>
+                    </li>
+                  </ul>
 
-                        </ul>';
-                     }
-
-                     else
-                     {
-                       echo '<ul class="nav navbar-nav navbar-right">
+                <?php else: ?>
+                     <ul class="nav navbar-nav navbar-right">
 
                            <li>
-                             <a href = "home/perfil" class="mbr-buttons_link">'.$_SESSION['user_info'][$_SESSION['user_id']]['user'].'</a>
+                             <a href = "home/perfil" class="mbr-buttons_link"><?php echo $_SESSION['user_info'][$_SESSION['user_id']]['user'] ?></a>
                            </li>
                            <li onclick="logOut()">
                              <a class="mbr-buttons_link">Desconectarse</a>
                            </li>
-
                            <li>
                              <a href="home/aboutUs" class="mbr-buttons_link">Sobre??</a>
                            </li>
-
-                       </ul>';
-                     }
-
-                   ?>
+                       </ul>
                  </ul>
+               <?php endif ?>
              </div>
              <!-- /.navbar-collapse -->
          </div>

@@ -7,8 +7,6 @@ ini_set('memory_limit', '-1');
 class controllers
 {
 
-  private $data = [];
-
   function __construct()
   {
     # code...
@@ -24,11 +22,6 @@ class controllers
   protected function view($view, $data = [])
   {
     require_once '../APP/views/'.$view.'.php';
-  }
-
-  public function setData($data = [])
-  {
-    $this->data = $data;
   }
 }
 

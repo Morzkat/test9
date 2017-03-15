@@ -14,14 +14,20 @@ require_once 'core/Template.php';
 require_once 'models/Conexion.php';
 require_once 'models/userModel.php';
 
+//controllers??
+require_once 'controllers/usersController.php';
+
 //Vars of page
 define('APP_ROOT', 'http://localhost/test9/');
 define('APP_Name', 'Umm???');
 
 //vendor
-require '../vendor/autoload.php';
+require_once '../vendor/autoload.php';
 
-//Scripts
+//Scripts??
+
+
+//CSS??
 
 
 ?>

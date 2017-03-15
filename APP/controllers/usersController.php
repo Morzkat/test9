@@ -3,7 +3,7 @@
 /**
  *
  */
-class user extends controllers
+class users extends controllers
 {
 
   function __construct()
@@ -11,9 +11,11 @@ class user extends controllers
     # code...
   }
 
-  public function userName($value='')
+  public function index($data = [])
   {
-    // $user_model = $this->model('User');
+      $user = $this->model("userModel");
+      $this->view("index",[]);
+
   }
 
   public function logOut()
@@ -108,13 +110,17 @@ class user extends controllers
         echo '<div class="alert alert-dismissible alert-danger">
          <p><strong>ERROR</strong> Contraseña diferente!!!!...</p>
          </div>';
-
       }
-
       $user->closeDB();
     }
+  }
+
+  public function getComments()
+  {
+    $user = $this->model('userModel');
+    $user->getComments();
   }
 }
 
 
-?>
+ ?>

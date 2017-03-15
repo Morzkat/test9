@@ -12,7 +12,7 @@
   <?php include('../APP/views/home/modals/log_In.php') ?>
 
   <!-- body of the page -->
-     <div class="row">
+
 
        <!-- for the space page -->
        <br>
@@ -27,95 +27,46 @@
 
          <div class="col-md-9">
 
+           <!-- start bootstrap default -->
+
            <!-- textarea and button -->
            <h3>Comenta!!!</h3>
            <textarea name="comment" rows="6" cols="135" placeholder="Comenta!!!"></textarea>
-           <button type="button" class="btn btn-success" name="button">Comentar</button>
-
+           <button type="button" class="btn btn-success" name="button" >Comentar</button></p>
 
              <div class="thumbnail">
                  <img class="img-responsive" src="http://placehold.it/800x300" alt="">
                  <div class="caption-full">
-                     <h4 class="pull-right">$24.99</h4>
-                     <h4><a href="#">Product Name</a>
-                     </h4>
-                     <p>See more snippets like these online store reviews at <a target="_blank" href="http://bootsnipp.com">Bootsnipp - http://bootsnipp.com</a>.</p>
-                     <p>Want to make these reviews work? Check out
-                         <strong><a href="http://maxoffsky.com/code-blog/laravel-shop-tutorial-1-building-a-review-system/">this building a review system tutorial</a>
-                         </strong>over at maxoffsky.com!</p>
-                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-                 </div>
-                 <div class="ratings">
-                     <p class="pull-right">3 reviews</p>
-                     <p>
-                         <span class="glyphicon glyphicon-star"></span>
-                         <span class="glyphicon glyphicon-star"></span>
-                         <span class="glyphicon glyphicon-star"></span>
-                         <span class="glyphicon glyphicon-star"></span>
-                         <span class="glyphicon glyphicon-star-empty"></span>
-                         4.0 stars
-                     </p>
                  </div>
              </div>
+         </div>
+         <!-- col 9 -->
+         <!-- end bootstrap default -->
 
-             <div class="well">
-
-                 <div class="text-right">
-                     <a class="btn btn-success">Leave a Review</a>
-                 </div>
-
-                 <hr>
-
-                 <div class="row">
-                     <div class="col-md-12">
-                         <span class="glyphicon glyphicon-star"></span>
-                         <span class="glyphicon glyphicon-star"></span>
-                         <span class="glyphicon glyphicon-star"></span>
-                         <span class="glyphicon glyphicon-star"></span>
-                         <span class="glyphicon glyphicon-star-empty"></span>
-                         Anonymous
-                         <span class="pull-right">10 days ago</span>
-                         <p>This product was great in terms of quality. I would definitely buy another!</p>
-                     </div>
-                 </div>
-
-                 <hr>
-
-                 <div class="row">
-                     <div class="col-md-12">
-                         <span class="glyphicon glyphicon-star"></span>
-                         <span class="glyphicon glyphicon-star"></span>
-                         <span class="glyphicon glyphicon-star"></span>
-                         <span class="glyphicon glyphicon-star"></span>
-                         <span class="glyphicon glyphicon-star-empty"></span>
-                         Anonymous
-                         <span class="pull-right">12 days ago</span>
-                         <p>I've alredy ordered another one!</p>
-                     </div>
-                 </div>
-
-                 <hr>
-
-                 <div class="row">
-                     <div class="col-md-12">
-                         <span class="glyphicon glyphicon-star"></span>
-                         <span class="glyphicon glyphicon-star"></span>
-                         <span class="glyphicon glyphicon-star"></span>
-                         <span class="glyphicon glyphicon-star"></span>
-                         <span class="glyphicon glyphicon-star-empty"></span>
-                         Anonymous
-                         <span class="pull-right">15 days ago</span>
-                         <p>I've seen some better than this, but not at this price. I definitely recommend this item.</p>
-                     </div>
-                 </div>
-
-             </div>
-
+         <!-- only left a query inserting the comment and a loop for get the comment -->
+         <div class="container">
+         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+         	<div class="row">
+          </div>
          </div>
 
-     </div>
+         	<!-- principal content -->
+             <div class="comments-container">
 
- </div>
+               <!-- ul for comments -->
+         		<ul id="comments-list" class="comments-list">
+              <li>
+
+              <?php $users = new users(); $users->getComments();?>
+
+                <!-- comment princial end -->
+
+                </li>
+         		</ul>
+         	</div>
+
+
+
  <!-- /.container -->
  <!-- End of the body -->
 

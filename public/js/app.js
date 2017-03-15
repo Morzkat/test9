@@ -1,5 +1,4 @@
 // function of the user for login with ajax
-
 function log_In()
 {
   response;
@@ -11,7 +10,7 @@ function log_In()
 
         // complete the process with ajax
         $.ajax({
-          url: 'User/logIn',
+          url: 'users/logIn',
           type: 'POST',
           data: {data: $(this).serialize()}
         })
@@ -49,7 +48,7 @@ function sign_In()
 
           // complete the process with ajax
           $.ajax({
-            url: 'User/signIn',
+            url: 'users/signIn',
             type: 'POST',
             data: {data: $(this).serialize()}
           })
@@ -83,7 +82,7 @@ function sign_In()
 function logOut()
 {
   $.ajax({
-    url: 'User/logOut',
+    url: 'users/logOut',
     type: 'POST',
     data: {data: 'sd'}
   })
