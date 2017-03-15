@@ -14,15 +14,16 @@
 
         <div class="form-group">
           <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-          <input id="user" type="text" class="form-control" name="user" placeholder="Usuario">
+          <input id="user" type="text" class="form-control" name="user" placeholder="Usuario" required>
 
         </div>
 
         <div class="form-group">
           <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-          <input id="pass" type="password" class="form-control" name="pass" placeholder="Contraseña">
+          <input id="pass" type="password" class="form-control" name="pass" placeholder="Contraseña" required>
         </div>
-        
+
+          <label for="checkbox"><input type="checkbox" name="" value=""> Recordarme</label>
           <button type="submit" class="btn btn-success" onclick = "log_In()" name="button">Iniciar Sesion</button>
           </form>
       </div>

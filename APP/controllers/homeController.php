@@ -12,12 +12,23 @@ class home extends controllers
   }
 
   //twig values
-  public function index($name = '')
+  public function index($data = [])
   {
-
       $user = $this->model("userModel");
+      $this->view("index",[]);
 
-      $this->view("home/index",['name' => $_SESSION]);
+  }
+  public function perfil($data = [])
+  {
+      $user = $this->model("userModel");
+      $this->view("perfil",[]);
+
+  }
+  public function aboutUs($data = [])
+  {
+      $user = $this->model("userModel");
+      $this->view("aboutUs",[]);
+
   }
 }
 

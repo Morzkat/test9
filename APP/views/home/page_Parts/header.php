@@ -36,7 +36,7 @@
 
                      if (!isset($_SESSION['user_id']))
                      {
-                       echo ' <ul class="nav navbar-nav navbar-left">
+                       echo ' <ul class="nav navbar-nav navbar-right">
 
                             <li data-toggle="modal" data-target="#sign_In" class="mbr-navbar_item">
                               <a class="mbr-buttons_link">Registrarse??</a>
@@ -45,7 +45,7 @@
                               <a class="mbr-buttons_link">Iniciar Sesion</a>
                             </li>
                             <li>
-                              <a href="#" class="mbr-buttons_link">Sobre??</a>
+                              <a href="home/aboutUs" class="mbr-buttons_link">Sobre??</a>
                             </li>
 
                         </ul>';
@@ -55,11 +55,15 @@
                      {
                        echo '<ul class="nav navbar-nav navbar-right">
 
-                           <li onclick="user/index">
-                             <a class="mbr-buttons_link">user_name??</a>
+                           <li>
+                             <a href = "home/perfil" class="mbr-buttons_link">'.$_SESSION['user_info'][$_SESSION['user_id']]['user'].'</a>
                            </li>
                            <li onclick="logOut()">
                              <a class="mbr-buttons_link">Desconectarse</a>
+                           </li>
+
+                           <li>
+                             <a href="home/aboutUs" class="mbr-buttons_link">Sobre??</a>
                            </li>
 
                        </ul>';

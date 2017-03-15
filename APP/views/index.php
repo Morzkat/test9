@@ -11,18 +11,27 @@
     <!-- modal Log In -->
   <?php include('../APP/views/home/modals/log_In.php') ?>
 
+  <!-- body of the page -->
      <div class="row">
 
+       <!-- for the space page -->
+       <br>
+       <br>
+       <br>
          <div class="col-md-3">
-             <p class="lead">Shop Name</p>
+             <p class="lead">Image perfil??</p>
              <div class="list-group">
-                 <a href="#" class="list-group-item active">Category 1</a>
-                 <a href="#" class="list-group-item">Category 2</a>
-                 <a href="#" class="list-group-item">Category 3</a>
+      <img class="img-responsive" src="http://placehold.it/250x300" alt="">
              </div>
          </div>
 
          <div class="col-md-9">
+
+           <!-- textarea and button -->
+           <h3>Comenta!!!</h3>
+           <textarea name="comment" rows="6" cols="135" placeholder="Comenta!!!"></textarea>
+           <button type="button" class="btn btn-success" name="button">Comentar</button>
+
 
              <div class="thumbnail">
                  <img class="img-responsive" src="http://placehold.it/800x300" alt="">
@@ -108,6 +117,7 @@
 
  </div>
  <!-- /.container -->
+ <!-- End of the body -->
 
  <!-- footer of the page modifiable -->
  <?php include('../APP/views/home/page_Parts/footer.php') ?>

@@ -10,33 +10,35 @@
       </div>
       <div class="modal-body">
 
+        <div class="" id="responseR"></div>
+
         <form class="" action="#" id="frmSign_In" method="post">
 
           <div class="form-group">
 
             <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-            <input id="email" type="text" class="form-control" name="email" placeholder="Email">
+            <input id="email" type="email" class="form-control" name="email" placeholder="Email" required>
           </div>
 
           <div class="form-group">
 
             <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-            <input id="user" type="text" class="form-control" name="user" placeholder="Usuario">
+            <input id="user" type="text" class="form-control" name="user" placeholder="Usuario" required>
           </div>
 
           <div class="form-group">
 
             <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-            <input id="pass" type="text" class="form-control" name="pass" placeholder="Contraseña">
+            <input id="pass" type="password" class="form-control" name="pass" placeholder="Contraseña" required>
           </div>
 
           <div class="form-group">
 
-            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-            <input id="pass2" type="text" class="form-control" name="pass2" placeholder="Repite-Contraseña">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-eye-close"></i></span>
+            <input id="pass2" type="password" class="form-control" name="pass2" placeholder="Repite-Contraseña" required>
           </div>
 
-          <button type="button" class="btn btn-success" onclick="log_In()" name="button">Registrarse</button>
+          <button type="submit" onclick="sign_In()" class="btn btn-success" name="button">Registrarse</button>
           </form>
       </div>
       <div class="modal-footer">

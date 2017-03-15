@@ -1,24 +1,15 @@
+// function of the user for login with ajax
+
 function log_In()
 {
   response;
 
    $("#frmLog_In").submit(function(event)
    {
-
+      // stop the normal actions of form
       event.preventDefault();
-      user = $(this).find('input[name="user"]').val();
-      pass = $(this).find('input[name="pass"]').val();
 
-      if (user.length == 0 || pass.length == 0)
-      {
-        response = '<div class="alert alert-dismissible alert-danger">';
-        response += '<p><strong>ERROR</strong> Llena todos los datos!!!!...</p>';
-        response += '</div>';
-        $("#response").html(response);
-      }
-
-      else
-      {
+        // complete the process with ajax
         $.ajax({
           url: 'User/logIn',
           type: 'POST',
@@ -26,18 +17,69 @@ function log_In()
         })
         .done(function(r)
         {
-          console.log('did it');
-          $("#response").html(r);
+          if (r == 1)
+          {
+            // this just in case the user have shit of internet
+            response = '<div class="alert alert-dismissible alert-success">';
+            response += '<p><strong>ERROR</strong> Conectado!!!!...</p>';
+            response += '</div>';
+            $("#response").html(response);
+
+            // reload the page
+            location.reload(true);
+          }
+
+          else
+          {
+            $("#response").html(r);
+          }
+
         });
-      }
   });
 }
 
 function sign_In()
 {
-  console.log(55);
+  response;
+
+   $("#frmSign_In").submit(function(event)
+   {
+      // stop the normal actions of form
+      event.preventDefault();
+
+          // complete the process with ajax
+          $.ajax({
+            url: 'User/signIn',
+            type: 'POST',
+            data: {data: $(this).serialize()}
+          })
+          .done(function(r)
+          {
+
+            if (r == 1)
+            {
+              // this just in case the user have shit of internet
+              response = '<div class="alert alert-dismissible alert-success">';
+              response += '<p><strong>ERROR</strong> Conectado!!!!...</p>';
+              response += '</div>';
+
+              console.log('did it');
+              $("#responseR").html(response);
+
+              // reload the page
+              // location.reload();
+            }
+
+            else
+            {
+              $("#responseR").html(r);
+            }
+
+          });
+   });
 }
 
+//for log out the user
 function logOut()
 {
   $.ajax({
@@ -47,6 +89,7 @@ function logOut()
   })
   .done(function(r)
   {
-    console.log(r);
+    // reload the connection
+    location.reload();
   });
 }
