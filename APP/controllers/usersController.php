@@ -120,6 +120,40 @@ class users extends controllers
     $user = $this->model('userModel');
     $user->getComments();
   }
+
+  public function comment()
+  {
+    if ($_POST)
+    {
+      parse_str($_POST['data'], $data);
+
+      $comment = $this->model('userModel');
+      $comment->comment($data['comment']);
+
+    }
+  }
+
+  public function replieComment()
+  {
+    if ($_POST)
+    {
+
+      if (!empty($_POST['data']) AND !empty($_POST['id']))
+      {
+        $comment = $this->model('userModel');
+        $comment->reply($_POST['data'], $_POST['id']);
+      }
+
+      else
+      {
+        echo '<div class="alert alert-dismissible alert-danger">
+         <p><strong>ERROR</strong> Debes comentar algo!!!!...</p>
+         </div>';
+      }
+    }
+  }
+
+
 }
 
 

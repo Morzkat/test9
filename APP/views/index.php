@@ -13,7 +13,6 @@
 
   <!-- body of the page -->
 
-
        <!-- for the space page -->
        <br>
        <br>
@@ -27,29 +26,15 @@
 
          <div class="col-md-9">
 
-           <!-- start bootstrap default -->
-
+           <div class="" id="commentDiv"></div>
            <!-- textarea and button -->
-           <h3>Comenta!!!</h3>
-           <textarea name="comment" rows="6" cols="135" placeholder="Comenta!!!"></textarea>
-           <button type="button" class="btn btn-success" name="button" >Comentar</button></p>
+          <form class="" id="frmComment" action="#" method="post">
 
-             <div class="thumbnail">
-                 <img class="img-responsive" src="http://placehold.it/800x300" alt="">
-                 <div class="caption-full">
-                 </div>
-             </div>
-         </div>
-         <!-- col 9 -->
-         <!-- end bootstrap default -->
+            <h3>Comenta!!!</h3>
+            <textarea name="comment" id="comment" rows="6" cols="135" placeholder="Comenta!!!"></textarea>
+            <button type="submit" class="btn btn-success" name="button" onclick="userComment()" <?php isset($_SESSION['user_id']) ? null : print "disabled"; ?>>Comentar</button></p>
 
-         <!-- only left a query inserting the comment and a loop for get the comment -->
-         <div class="container">
-         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
-         	<div class="row">
-          </div>
-         </div>
-
+          </form>
          	<!-- principal content -->
              <div class="comments-container">
 
@@ -60,14 +45,12 @@
               <?php $users = new users(); $users->getComments();?>
 
                 <!-- comment princial end -->
-
+                  </ul>
                 </li>
          		</ul>
          	</div>
-
-
-
  <!-- /.container -->
+
  <!-- End of the body -->
 
  <!-- footer of the page modifiable -->
